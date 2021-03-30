@@ -36,8 +36,8 @@ body {
     margin-top: 0.5%;
 }
 #panorama {
-    width: 1280px;
-    height: 720px;
+    width: 1600px;
+    height: 900px;
 }
 .pnlm-load-box {
     z-index:-999;

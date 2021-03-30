@@ -1,324 +1,415 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unreal Interior Demo 360</title>
-    <link rel="preload" href="https://farm66.static.flickr.com/65535/50612961962_5cfcf9d64f_o.jpg" as="image"/>
-    <link rel="preload" href="https://farm66.static.flickr.com/65535/50612961772_28d4f664ec_o.jpg" as="image"/>
-    <link rel="preload" href="https://farm66.static.flickr.com/65535/50612853051_1507fdee06_o.jpg" as="image"/>
-    <link rel="preload" href="https://farm66.static.flickr.com/65535/50612962102_ec31f74294_o.jpg" as="image"/>
-    <link rel="preload" href="https://farm66.static.flickr.com/65535/50612105848_2da6553509_o.jpg" as="image"/>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <!-- <link rel="preload" href="https://farm66.static.flickr.com/65535/50612961962_5cfcf9d64f_o.jpg" as="image" />
+    <link rel="preload" href="https://farm66.static.flickr.com/65535/50612961772_28d4f664ec_o.jpg" as="image" />
+    <link rel="preload" href="https://farm66.static.flickr.com/65535/50612853051_1507fdee06_o.jpg" as="image" />
+    <link rel="preload" href="https://farm66.static.flickr.com/65535/50612962102_ec31f74294_o.jpg" as="image" />
+    <link rel="preload" href="https://farm66.static.flickr.com/65535/50612105848_2da6553509_o.jpg" as="image" /> -->
+
+    <link rel="preload" href="https://farm66.static.flickr.com/65535/51083464496_d6a5594916_o.jpg" as="image" id= "6"/>
+    <link rel="preload" href="https://farm66.static.flickr.com/65535/51083464351_dd15785125_o.jpg" as="image" id= "5"/>
+    <link rel="preload" href="https://farm66.static.flickr.com/65535/51014281695_b28f3d810c_o.jpg" as="image" id= "4"/>
+    <link rel="preload" href="https://farm66.static.flickr.com/65535/51083464061_64e5bac60e_o.jpg" as="image" id= "3"/>
+    <link rel="preload" href="https://farm66.static.flickr.com/65535/50998543469_7fb8c78f14_o.jpg" as="image" id= "2"/>
+    <link rel="preload" href="https://farm66.static.flickr.com/65535/50998543329_5af25d4ace_o.jpg" as="image" id= "1"/>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 
     <link rel="stylesheet" href="css/style.css" />
 
-    
+
 </head>
+
 <body>
-<div id="container">
-    <div id="panorama"></div>
-</div>
+    <div id="container">
+        <div id="panorama"></div>
+    </div>
 
-<script>
+    <script>
 
-pannellum.viewer('panorama', {
+        pannellum.viewer('panorama', {
 
-    "default": {
-        "firstScene": "Middle",
-        "author": "Stormstudio",
-        "sceneFadeDuration": 1000
-        
-    },
+            "default": {
+                "firstScene": "Tableside",
+                "author": "Stormstudio",
+                "sceneFadeDuration": 1000
 
-    "scenes": {
-        "Entrance": {
-            "title": "Entrance",
-            "hfov": 110,
-            "pitch": 0,
-            "yaw": 0,
-            "type": "equirectangular",
-            "panorama": "https://farm66.static.flickr.com/65535/50612961772_28d4f664ec_o.jpg",
-            "autoLoad": true,
-            "hotSpots": [
-                {
-                    "pitch": -3,
-                    "yaw": 50,
-                    "type": "info",
-                    "text": "Light of Table",
-                    "URL": "https://stormstudio.site"
-                },
-                {
-                    "pitch": 0,
-                    "yaw": -5,
-                    "type": "info",
-                    "text": "Painting",
-                    "URL": "https://stormstudio.site"
-                },
-                {
-                    "pitch": 0,
-                    "yaw": 180,
-                    "type": "info",
-                    "text": "Door",
-                    "URL": "https://stormstudio.site"
-                },
-                {
-                    "pitch": -20,
-                    "yaw": 10,
-                    "type": "scene",
-                    "text": "Middle of Interior",
-                    "sceneId": "Middle"
-                },  
-                {
-                    "pitch": -2,
-                    "yaw": 12,
-                    "type": "scene",
-                    "text": "Window of Interior",
-                    "sceneId": "Window",
-                    "targetYaw": -25,
-                    "targetPitch": -5,
-                },
-                {
-                    "pitch": -25,
-                    "yaw": 75,
-                    "type": "scene",
-                    "text": "Dining table",
-                    "sceneId": "Table",
-                    "targetYaw": -25,
-                    "targetPitch": -18,
-                },
-                {
-                    "pitch": -8,
-                    "yaw": 27,
-                    "type": "scene",
-                    "text": "Sofa Area",
-                    "sceneId": "Sofa",
-                    "targetYaw": 25,
-                    "targetPitch": -10,
-                },
-            ]
-        },
+            },
 
-        "Table": {
-            "title": "Dining table",
-            "hfov": 100,
-            "pitch": 0,
-            "yaw": 0,
-            "type": "equirectangular",
-            "panorama": "https://farm66.static.flickr.com/65535/50612962102_ec31f74294_o.jpg",
-            "autoLoad": true,
-            "hotSpots": [
-                {
-                    "pitch": -12,
-                    "yaw": -15,
-                    "type": "scene",
-                    "text": "Middle of Interior",
-                    "sceneId": "Middle"
-                },  
-                {
-                    "pitch": 0,
-                    "yaw": -5,
-                    "type": "scene",
-                    "text": "Window of Interior",
-                    "sceneId": "Window",
-                    "targetYaw": -25,
-                    "targetPitch": -5,
-                }, 
-                {
-                    "pitch": -20,
-                    "yaw": -75,
-                    "type": "scene",
-                    "text": "Entrance",
-                    "sceneId": "Entrance",
-                    "targetYaw": 25,
-                    "targetPitch": -5,
-                },
-                {
+            "scenes": {
+                "Entrance": {
+                    "title": "Entrance",
+                    "hfov": 110,
                     "pitch": -5,
-                    "yaw": 7,
-                    "type": "scene",
-                    "text": "Sofa Area",
-                    "sceneId": "Sofa",
-                    "targetYaw": 25,
-                    "targetPitch": -10,
+                    "yaw": 25,
+                    "type": "equirectangular",
+                    "panorama": "https://farm66.static.flickr.com/65535/51083464496_d6a5594916_o.jpg",
+                    "preview": "https://farm66.static.flickr.com/65535/51083549106_5eb2ef6d56_z.jpg",
+                    "autoLoad": true,
+                    "hotSpots": [
+                        {
+                            "pitch": 0,
+                            "yaw": -26,
+                            "type": "info",
+                            "text": "Painting",
+                            "URL": "https://stormstudio.site"
+                        },
+                        {
+                            "pitch": 0,
+                            "yaw": 150,
+                            "type": "info",
+                            "text": "Door",
+                            "URL": "https://stormstudio.site"
+                        },
+                        {
+                            "pitch": -15,
+                            "yaw": 15,
+                            "type": "scene",
+                            "text": "Middle of Interior",
+                            "sceneId": "Middle"
+                        },
+                        {
+                            "pitch": 0,
+                            "yaw": 15,
+                            "type": "scene",
+                            "text": "Tableside",
+                            "sceneId": "Tableside"
+                        },
+                        {
+                            "pitch": -2,
+                            "yaw": -10,
+                            "type": "scene",
+                            "text": "Window view",
+                            "sceneId": "Window view",
+                            "targetYaw": -50,
+                            "targetPitch": -5,
+                        },
+                        {
+                            "pitch": -15,
+                            "yaw": 75,
+                            "type": "scene",
+                            "text": "Sofa",
+                            "sceneId": "Sofa",
+                            "targetYaw": -25,
+                            "targetPitch": -18,
+                        },
+                        {
+                            "pitch": -5,
+                            "yaw": 5,
+                            "type": "scene",
+                            "text": "Dining Table",
+                            "sceneId": "Dining Table",
+                            "targetYaw": 0,
+                            "targetPitch": -20,
+                        },
+                    ]
                 },
-            ]
-        },
 
-        "Middle": {
-            "title": "Middle of Interior",
-            "hfov": 110,
-            "yaw": 5,
-            "type": "equirectangular",
-            "panorama": "https://farm66.static.flickr.com/65535/50612961962_5cfcf9d64f_o.jpg",
-            "preview": "https://farm66.static.flickr.com/65535/50607978223_6ee831d9e3_z.jpg",
-            "autoLoad": true,
-            "hotSpots": [
-                {
-                    "pitch": -10,
-                    "yaw": -37,
-                    "type": "info",
-                    "text": "Television",
-                    "URL": "https://stormstudio.site"
-                },
-                {
-                    "pitch": -5,
-                    "yaw": 203,
-                    "type": "scene",
-                    "text": "Entrance",
-                    "sceneId": "Entrance",
-                    "targetYaw": 25,
-                    "targetPitch": -5,
-                },
-                {
-                    "pitch": 2,
+                "Sofa": {
+                    "title": "Sofa",
+                    "hfov": 100,
+                    "pitch": 0,
                     "yaw": 0,
-                    "type": "scene",
-                    "text": "Window of Interior",
-                    "sceneId": "Window",
-                    "targetYaw": -25,
-                    "targetPitch": -5,
+                    "type": "equirectangular",
+                    "panorama": "https://farm66.static.flickr.com/65535/51083464351_dd15785125_o.jpg",
+                    "autoLoad": true,
+                    "hotSpots": [
+                        {
+                            "pitch": -20,
+                            "yaw": -15,
+                            "type": "scene",
+                            "text": "Middle of Interior",
+                            "sceneId": "Middle"
+                        },
+                        {
+                            "pitch": 0,
+                            "yaw": -10,
+                            "type": "scene",
+                            "text": "Window view",
+                            "sceneId": "Window view",
+                            "targetYaw": -50,
+                            "targetPitch": -5,
+                        },
+                        {
+                            "pitch": -20,
+                            "yaw": -75,
+                            "type": "scene",
+                            "text": "Entrance",
+                            "sceneId": "Entrance",
+                            "targetYaw": 25,
+                            "targetPitch": -5,
+                        },
+                        {
+                            "pitch": -6,
+                            "yaw": -4,
+                            "type": "scene",
+                            "text": "Dining Table",
+                            "sceneId": "Dining Table",
+                            "targetYaw": 0,
+                            "targetPitch": -20,
+                        },
+                        {
+                            "pitch": 0,
+                            "yaw": 12,
+                            "type": "scene",
+                            "text": "Tableside",
+                            "sceneId": "Tableside"
+                        },
+                    ]
                 },
-                {
-                    "pitch": -15,
-                    "yaw": 30,
-                    "type": "scene",
-                    "text": "Sofa Area",
-                    "sceneId": "Sofa",
-                    "targetYaw": 25,
-                    "targetPitch": -10,
-                },
-                {
-                    "pitch": -20,
-                    "yaw": 150,
-                    "type": "scene",
-                    "text": "Dining Table",
-                    "sceneId": "Table",
-                    "targetYaw": -25,
-                    "targetPitch": -18,
-                },
-            ]
-        },
-        
-        "Window": {
-            "title": "Windows Lighting",
-            "hfov": 120,
-            "yaw": 0,
-            "type": "equirectangular",
-            "panorama": "https://farm66.static.flickr.com/65535/50612853051_1507fdee06_o.jpg",
-            "autoLoad": true,
-            "hotSpots": [
-                {
-                    "pitch": 2,
-                    "yaw": -79,
-                    "type": "info",
-                    "text": "Lamp",
-                    "URL": "https://stormstudio.site"
-                },
-                {
-                    "pitch": 0,
-                    "yaw": -100,
-                    "type": "info",
-                    "text": "Windows",
-                    "URL": "https://stormstudio.site"
-                },
-                {
-                    "pitch": -15,
-                    "yaw": -60,
-                    "type": "info",
-                    "text": "Sofa",
-                    "URL": "https://stormstudio.site"
-                },
-                {
-                    "pitch": -2,
-                    "yaw": 3,
-                    "type": "scene",
-                    "text": "Entrance",
-                    "sceneId": "Entrance",
-                    "targetYaw": 25,
-                    "targetPitch": -5,
-                },
-                {
-                    "pitch": -25,
-                    "yaw": -15,
-                    "type": "scene",
-                    "text": "Middle of Interior",
-                    "sceneId": "Middle",
-                    "targetYaw": 180,
-                    "targetPitch": 0,
-                },
-                {
-                    "pitch": -5,
-                    "yaw": -20,
-                    "type": "scene",
-                    "text": "Dining table",
-                    "sceneId": "Table",
-                    "targetYaw": -25,
-                    "targetPitch": -18,
-                },
-                {
-                    "pitch": -25,
-                    "yaw": -80,
-                    "type": "scene",
-                    "text": "Sofa Area",
-                    "sceneId": "Sofa",
-                    "targetYaw": 25,
-                    "targetPitch": -10,
-                },
-            ]
-        },
-        "Sofa": {
-            "title": "Sofa Area",
-            "hfov": 130,
-            "yaw": 5,
-            "type": "equirectangular",
-            "panorama": "https://farm66.static.flickr.com/65535/50612105848_2da6553509_o.jpg",
-            "autoLoad": true,
-            "hotSpots": [
-                {
-                    "pitch": -2,
-                    "yaw": 21,
-                    "type": "scene",
-                    "text": "Entrance",
-                    "sceneId": "Entrance",
-                    "targetYaw": 25,
-                    "targetPitch": -5,
-                },
-                {
-                    "pitch": -20,
-                    "yaw": 35,
-                    "type": "scene",
-                    "text": "Middle of Interior",
-                    "sceneId": "Middle",
-                    "targetYaw": 180,
-                    "targetPitch": 0,
-                },
-                {
-                    "pitch": -5,
-                    "yaw": 5,
-                    "type": "scene",
-                    "text": "Dining table",
-                    "sceneId": "Table",
-                    "targetYaw": -25,
-                    "targetPitch": -18,
-                },
-                {
-                    "pitch": -30,
-                    "yaw": 85,
-                    "type": "scene",
-                    "text": "Window of Interior",
-                    "sceneId": "Window",
-                    "targetYaw": -25,
-                    "targetPitch": -5,
-                },
-            ]
-        },
-    }
-});
 
-</script>
+                "Middle": {
+                    "title": "Middle of Interior",
+                    "hfov": 120,
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "equirectangular",
+                    "panorama": "https://farm66.static.flickr.com/65535/51014281695_b28f3d810c_o.jpg",
+                    "preview": "https://farm66.static.flickr.com/65535/51083548926_3cbc4775a1_z.jpg",
+                    "autoLoad": true,
+                    "hotSpots": [
+                        {
+                            "pitch": -5,
+                            "yaw": -31,
+                            "type": "info",
+                            "text": "Television",
+                            "URL": "https://stormstudio.site"
+                        },
+                        {
+                            "pitch": -3,
+                            "yaw": 220,
+                            "type": "scene",
+                            "text": "Entrance",
+                            "sceneId": "Entrance",
+                            "targetYaw": 25,
+                            "targetPitch": -5,
+                        },
+                        {
+                            "pitch": 2,
+                            "yaw": -13,
+                            "type": "scene",
+                            "text": "Window view",
+                            "sceneId": "Window view",
+                            "targetYaw": -50,
+                            "targetPitch": -5,
+                        },
+                        {
+                            "pitch": 2,
+                            "yaw": 23,
+                            "type": "scene",
+                            "text": "Tableside",
+                            "sceneId": "Tableside",
+                        },
+                        {
+                            "pitch": -18,
+                            "yaw": 155,
+                            "type": "scene",
+                            "text": "Sofa",
+                            "sceneId": "Sofa",
+                            "targetYaw": -25,
+                            "targetPitch": -18,
+                        },
+                        {
+
+                            "pitch": -8,
+                            "yaw": 0,
+                            "type": "scene",
+                            "text": "Dining Table",
+                            "sceneId": "Dining Table",
+                            "targetYaw": 0,
+                            "targetPitch": -20,
+                        },
+                    ]
+                },
+
+                "Window view": {
+                    "title": "Window view",
+                    "hfov": 120,
+                    "yaw": 0,
+                    "type": "equirectangular",
+                    "panorama": "https://farm66.static.flickr.com/65535/50998543469_7fb8c78f14_o.jpg",
+                    "autoLoad": true,
+                    "hotSpots": [
+                        {
+                            "pitch": 0,
+                            "yaw": -100,
+                            "type": "info",
+                            "text": "Windows",
+                            "URL": "https://stormstudio.site"
+                        },
+                        {
+                            "pitch": -15,
+                            "yaw": -60,
+                            "type": "info",
+                            "text": "Plant",
+                            "URL": "https://stormstudio.site"
+                        },
+                        {
+                            "pitch": 0,
+                            "yaw": -55,
+                            "type": "scene",
+                            "text": "Tableside",
+                            "sceneId": "Tableside",
+                        },
+                        {
+                            "pitch": -2,
+                            "yaw": 45,
+                            "type": "scene",
+                            "text": "Entrance",
+                            "sceneId": "Entrance",
+                            "targetYaw": 25,
+                            "targetPitch": -5,
+                        },
+                        {
+                            "pitch": -20,
+                            "yaw": 28,
+                            "type": "scene",
+                            "text": "Middle of Interior",
+                            "sceneId": "Middle",
+                            "targetYaw": 180,
+                            "targetPitch": 0,
+                        },
+                        {
+                            "pitch": -15,
+                            "yaw": -5,
+                            "type": "scene",
+                            "text": "Dining table",
+                            "sceneId": "Dining Table",
+                            "targetYaw": 0,
+                            "targetPitch": -20,
+                        },
+                        {
+                            "pitch": -8,
+                            "yaw": 20,
+                            "type": "scene",
+                            "text": "Sofa",
+                            "sceneId": "Sofa",
+                            "targetYaw": -25,
+                            "targetPitch": -18,
+                        },
+                    ]
+                },
+                "Dining Table": {
+                    "title": "Dining Table",
+                    "hfov": 130,
+                    "yaw": 5,
+                    "type": "equirectangular",
+                    "panorama": "https://farm66.static.flickr.com/65535/51083464061_64e5bac60e_o.jpg",
+                    "autoLoad": true,
+                    "hotSpots": [
+                        {
+                            "pitch": -2,
+                            "yaw": 14,
+                            "type": "scene",
+                            "text": "Entrance",
+                            "sceneId": "Entrance",
+                            "targetYaw": 25,
+                            "targetPitch": -5,
+                        },
+                        {
+                            "pitch": -20,
+                            "yaw": 5,
+                            "type": "scene",
+                            "text": "Middle of Interior",
+                            "sceneId": "Middle",
+                            "targetYaw": 180,
+                            "targetPitch": 0,
+                        },
+                        {
+                            "pitch": -8,
+                            "yaw": -12,
+                            "type": "scene",
+                            "text": "Sofa",
+                            "sceneId": "Sofa",
+                            "targetYaw": -25,
+                            "targetPitch": -18,
+                        },
+                        {
+                            "pitch": 0,
+                            "yaw": 150,
+                            "type": "scene",
+                            "text": "Window view",
+                            "sceneId": "Window view",
+                            "targetYaw": -50,
+                            "targetPitch": -5,
+                        },
+                        {
+                            "pitch": 0,
+                            "yaw": 255,
+                            "type": "scene",
+                            "text": "Tableside",
+                            "sceneId": "Tableside",
+                        },
+                    ]
+                },
+
+                "Tableside": {
+                    "title": "Tableside",
+                    "hfov": 120,
+                    "yaw": 5,
+                    "type": "equirectangular",
+                    "panorama": "https://farm66.static.flickr.com/65535/50998543329_5af25d4ace_o.jpg",
+                    "autoLoad": true,
+                    "hotSpots": [
+                        {
+                            "pitch": -2,
+                            "yaw": -7,
+                            "type": "scene",
+                            "text": "Entrance",
+                            "sceneId": "Entrance",
+                            "targetYaw": 25,
+                            "targetPitch": -5,
+                        },
+                        {
+                            "pitch": -15,
+                            "yaw": -15,
+                            "type": "scene",
+                            "text": "Middle of Interior",
+                            "sceneId": "Middle",
+                            "targetYaw": 180,
+                            "targetPitch": 0,
+                        },
+                        {
+                            "pitch": -15,
+                            "yaw": 5,
+                            "type": "scene",
+                            "text": "Dining table",
+                            "sceneId": "Dining Table",
+                            "targetYaw": 0,
+                            "targetPitch": -20,
+                        },
+                        {
+                            "pitch": -7,
+                            "yaw": -28,
+                            "type": "scene",
+                            "text": "Sofa",
+                            "sceneId": "Sofa",
+                            "targetYaw": -25,
+                            "targetPitch": -18,
+                        },
+                        {
+                            "pitch": 0,
+                            "yaw": 78,
+                            "type": "scene",
+                            "text": "Window view",
+                            "sceneId": "Window view",
+                            "targetYaw": -50,
+                            "targetPitch": -5,
+                        },
+                    ]
+                },
+            }
+        });
+
+    </script>
 
 </body>
+
 </html>
